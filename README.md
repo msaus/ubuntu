@@ -18,6 +18,8 @@ visudo
 
 [username] ALL=(ALL) ALL
 
+# Now check if you can login to server via ssh
+
 # Add swap
 # You need to consider size of swap yourself.
 
@@ -34,3 +36,11 @@ swapon /var/swap/swap0
 vi /etc/fstab
 
 /var/swap/swap0 swap swap defaults 0 0
+
+# Ban login as root
+vi /etc/ssh/sshd_config
+
+PermitRootLogin no
+
+# Reboot server
+reboot
